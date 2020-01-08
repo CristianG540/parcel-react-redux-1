@@ -24,10 +24,15 @@ class ConnectedForm extends Component {
 
   render () {
     const { title } = this.state
+    const formConstants = {
+      title: 'Titulo',
+      save: 'GUARDAR'
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">{formConstants.title}</label>
           <input
             type="text"
             id="title"
@@ -35,7 +40,7 @@ class ConnectedForm extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <button type="submit">SAVE</button>
+        <button type="submit">{formConstants.save}</button>
       </form>
     )
   }
