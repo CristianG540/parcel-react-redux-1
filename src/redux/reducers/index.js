@@ -8,7 +8,7 @@ const rootReducer = (state = initialState, action) => {
   if (action.type === ADD_ARTICLE) {
     return {
       ...state,
-      articles: state.articles.concat(action.payload)
+      articles: state.articles.concat({ ...action.payload, id: state.articles.length + 1 })
     }
   }
 

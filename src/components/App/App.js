@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from '../Table/Table'
 import List from '../List/List'
+import Form from '../List/Form'
 
 // Redux test
 // eslint-disable-next-line no-unused-vars
@@ -8,8 +9,9 @@ import reduxIndex from '../../redux/index'
 
 class App extends React.Component {
   render () {
-    const title = 'Buena la rata !'
     const articlesTitle = 'Articulos'
+    const newArticleTitle = 'Agregar un nuevo articulo'
+    const tableTitle = 'Buena la rata !'
     const characters = [
       {
         name: 'Charlie',
@@ -28,13 +30,20 @@ class App extends React.Component {
         job: 'Bartender'
       }
     ]
+
     return (
       <div className="App">
-        <h1>{title}</h1>
+        <h1>{tableTitle}</h1>
         <Table characterData={characters}/>
         <hr/>
-        <h1>{articlesTitle}</h1>
-        <List/>
+        <div>
+          <h2>{articlesTitle}</h2>
+          <List />
+        </div>
+        <div>
+          <h2>{newArticleTitle}</h2>
+          <Form />
+        </div>
       </div>
     )
   }
