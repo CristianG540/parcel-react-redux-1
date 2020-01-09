@@ -2,6 +2,7 @@ import React from 'react'
 import Table from '../Table/Table'
 import List from '../List/List'
 import Form from '../List/Form'
+import Post from '../Posts/Posts'
 
 // Redux test
 // eslint-disable-next-line no-unused-vars
@@ -9,6 +10,7 @@ import reduxIndex from '../../redux/index'
 
 class App extends React.Component {
   render () {
+    const postsTitle = 'API posts'
     const articlesTitle = 'Articulos'
     const newArticleTitle = 'Agregar un nuevo articulo'
     const tableTitle = 'Buena la rata !'
@@ -43,6 +45,10 @@ class App extends React.Component {
         <div>
           <h2>{newArticleTitle}</h2>
           <Form />
+        </div>
+        <div>
+          <h2>{postsTitle}</h2>
+          <Post />
         </div>
       </div>
     )

@@ -1,7 +1,8 @@
-import { ADD_ARTICLE } from '../constants/action-types'
+import { ADD_ARTICLE, DATA_LOADED } from '../constants/action-types'
 
 const initialState = {
-  articles: []
+  articles: [],
+  remoteArticles: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -9,6 +10,13 @@ const rootReducer = (state = initialState, action) => {
     return {
       ...state,
       articles: state.articles.concat({ ...action.payload, id: state.articles.length + 1 })
+    }
+  }
+
+  if (action.type === DATA_LOADED) {
+    return {
+      ...state,
+      remoteArticles: state.remoteArticles.concat(action.payload)
     }
   }
 
